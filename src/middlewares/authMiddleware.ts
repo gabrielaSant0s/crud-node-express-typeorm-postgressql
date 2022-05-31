@@ -25,7 +25,7 @@ export default function authMiddleware(
 
     const { id } = data as TokenPayload;
 
-    req.userId = id;
+    // req.userId = id;
 
     return next();
   } catch {

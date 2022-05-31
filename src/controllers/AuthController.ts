@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 import User from "../entities/User";
 
 export class AuthController {
+  static token: any;
   async authenticate(req: Request, res: Response) {
     const repository = getRepository(User);
     const { email, password } = req.body;

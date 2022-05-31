@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
 import { getRepository } from "typeorm";
+import { Request, Response } from "express";
 
 import User from "../entities/User";
 
 export class UserController {
-  index(req: Request, res: Response) {
-    return res.send({ userID: req.userId });
-  }
+  // index(req: Request, res: Response) {
+  //   return res.send({ userID: req.userId });
+  // }
 
   async store(req: Request, res: Response) {
     const repository = getRepository(User);

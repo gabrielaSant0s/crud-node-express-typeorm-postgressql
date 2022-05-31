@@ -16,19 +16,21 @@ const routes = Router();
 
 routes.post("/users", new UserController().store);
 routes.post("/login", new AuthController().authenticate);
+// routes.get("/users", new UserController().index);
+
+routes.get("/categories", new GetAllCategoriesController().handle);
+
+routes.get("/videos", new GetAllVideosController().handle);
 
 routes.use(authMiddleware);
 
 routes.post("/categories", new CreateCategoryController().handle);
-routes.get("/categories", new GetAllCategoriesController().handle);
+// routes.get("/categories", new GetAllCategoriesController().handle);
 routes.delete("/categories/:id", new DeleteCategoryController().handle);
 routes.put("/categories/:id", new UpdateCategoryController().handle);
 
 routes.post("/videos", new CreateVideoController().handle);
-routes.get("/videos", new GetAllVideosController().handle);
 routes.delete("/videos/:id", new DeleteVideoController().handle);
 routes.put("/videos/:id", new UpdateVideoController().handle);
-
-routes.get("/users", new UserController().index);
 
 export { routes };
